@@ -1,0 +1,21 @@
+﻿@model HomeVM
+
+
+<h1>Home Page</h1>
+
+<p>@Model.Brends.Name</p>
+
+<h2>Blog</h2>
+
+<p>@Model.Blog.Name</p>
+<p>@Model.Blog.Title</p>
+<p>@Model.Blog.Content</p>
+
+<h2>Car Brends</h2>
+
+@foreach (var item in Model.CarModels)
+	{
+		<p>
+            <a asp-controller="home"asp-action="detail"asp-route-id="@item.Id">@item.Name</a>
+		</p> 
+	}

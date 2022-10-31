@@ -1,0 +1,25 @@
+﻿@model CarModels
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>Models</h1>
+
+<p>@Model.Id</p>
+<p>@Model.Name</p>
+
+
+@if (Model.Brends != null && Model.Brends.Count > 0)
+{
+
+        foreach (Brends brand in Model.Brends)
+         {
+             <p>
+                 <a asp-controller="home" asp-action="MrkDetail">BMW:@brand.Name @brand.Count AZN</a>
+             </p>
+         }
+}
+            else
+            {
+                <p>Bu Markada Avtomobil yoxdur</p>
+            }
